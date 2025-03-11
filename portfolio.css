@@ -50,7 +50,6 @@ header {
 
 .carousel-images {
     display: flex;
-    animation: slide 9s infinite;
 }
 
 .carousel-images img {
@@ -58,40 +57,71 @@ header {
     height: auto;
 }
 
-@keyframes slide {
-    0% {
-        transform: translateX(0);
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
     }
-    33% {
-        transform: translateX(-100%);
+    40% {
+        transform: translateY(-10px);
     }
-    66% {
-        transform: translateX(-200%);
-    }
-    100% {
-        transform: translateX(0);
+    60% {
+        transform: translateY(-5px);
     }
 }
+
+.bounce {
+    animation: bounce 2s ease infinite;
+}
+
+
+
 
 .description {
-    padding: 20px;
-    text-align: center;
-    background-color: #f4f4f4;
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    color: rgb(19, 17, 17);
+   
 }
 
-.description h2 {
-    font-size: 2em;
+
+    .education, .professional-history, .contact {
+        text-align: left;
+        margin-left: 10px; 
+    }
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #000;  
+}
+/* Staggered Fade In */
+@keyframes fadeInStaggered {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
-.description p {
-    font-size: 1.2em;
-    margin-top: 10px;
+.staggered-text > * {
+    opacity: 0;
+    animation: fadeInStaggered 2s ease forwards;
+    animation-delay: calc(0.5s * var(--i)); /* Delay based on the order of each element */
 }
 
-.education, .professional-history, .contact {
-    padding: 20px;
-    margin-top: 20px;
+.staggered-text > *:nth-child(1) {
+    --i: 0;
 }
+.staggered-text > *:nth-child(2) {
+    --i: 1;
+}
+.staggered-text > *:nth-child(3) {
+    --i: 2;
+}
+
 
 h2 {
     text-align: center;
@@ -109,8 +139,8 @@ ul li {
 }
 
 footer {
-    background-color: #333;
-    color: white;
+    background-color: #332f2f;
+    color: rgb(248, 243, 243);
     padding: 10px;
     text-align: center;
     margin-top: 20px;
