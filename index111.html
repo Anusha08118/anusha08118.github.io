@@ -1,65 +1,303 @@
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
-    <link rel="stylesheet" href="portfolio.css">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: #6d4c4c;
+            padding: 12px 20px;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 18px;
+            transition: 0.3s ease-in-out;
+        }
+
+        nav a:hover {
+            background-color: #575757;
+        }
+
+        /* Main Content */
+        header {
+            background: url('your-image.jpg') no-repeat center center/cover;
+            color: rgb(111, 106, 106);
+            text-align: center;
+            padding: 100px 20px;
+            animation: fadeIn 2s ease-out;
+        }
+
+        header h1 {
+            font-size: 50px;
+            margin: 0;
+            animation: slideIn 1.5s ease-out;
+        }
+
+        header p {
+            font-size: 20px;
+            margin-top: 10px;
+            animation: fadeIn 2s ease-out;
+        }
+
+        /* About Section */
+        section.about {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #fff;
+            opacity: 0;
+            animation: fadeInUp 2s forwards;
+        }
+
+        section.about h2 {
+            font-size: 40px;
+            animation: slideInLeft 1s ease-out;
+        }
+
+        section.about p {
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Portfolio Section */
+        section.portfolio {
+            padding: 50px 20px;
+            background-color: #eaeaea;
+            text-align: center;
+            opacity: 0;
+            animation: fadeInUp 2s forwards;
+        }
+
+        section.portfolio h2 {
+            font-size: 40px;
+            animation: slideInLeft 1s ease-out;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .portfolio-item {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .portfolio-item h3 {
+            margin-top: 15px;
+            font-size: 24px;
+        }
+
+        .portfolio-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Contact Section */
+        section.contact {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #333;
+            color: #fff;
+            opacity: 0;
+            animation: fadeInUp 2s forwards;
+        }
+
+        section.contact h2 {
+            font-size: 40px;
+        }
+
+        section.contact p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #837e7e;
+            color: #fff;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-50px);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-50px);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+    </style>
 </head>
 <body>
 
+    <!-- Navigation Bar -->
     <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#professional-history">Professional History</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
     </nav>
+
+    <!-- Header Section -->
     <header id="home">
-        <div class="carousel">
-            <div class="carousel-images">
-                <img src="pexelss.jpg" alt="Header Image">
+        <h1>Anusha Byanjankar</h1>
+        <p>Web Developer & Designer</p>
+    </header>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h2>About Me</h2>
+        <p>
+            I am a passionate web developer with experience in creating beautiful, responsive, and user-friendly websites.
+            My goal is to bring creative and effective solutions to every project I work on.
+        </p><hr>
+    </section>
+    
+
+    <section class="about" id="about">
+        <h2>Education and Qualification</h2>
+        <p>
+            <ul>
+                <li>Master of Science in Computer Science - MIT (2020)</li>
+                <li>Bachelor of Science in Computer Application- Stanford (2018)</li>
+                <li>+2 in Computer Science- TU(2023) </li>
+            </ul>
+    
+        <hr> 
+    </section>
+
+
+
+    <section class="about" id="about">
+        <h2>Professional History</h2>
+        <p>
+            <ul>
+                <li>Lead Developer - Openwebsite (2023 - Present)</li>
+                <li>Researcher - MIT (2020 - 2023)</li>
+                <li>Software Engineer - Google (2018 - 2020)</li>
+            </ul>
+        </p>
+    </section>
+
+
+
+    
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <h2>My Work</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="esewa.jpg" alt="Project 1">
+                <h3>Project 1</h3>
+                <p>eSewa is a popular digital wallet and payment gateway in Nepal, allowing users to make secure online payments, pay bills, recharge mobile phones, transfer money, and shop online. It offers a convenient, cashless solution for individuals and businesses, supporting both mobile and web platforms.</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="khalti.jpg" alt="Project 2">
+                <h3>Project 2</h3>
+                <p>Khalti is a digital wallet and payment gateway in Nepal that enables users to make secure online transactions, pay bills, recharge mobile phones, and shop online. It offers easy access to various services like utility bill payments, ticket bookings, and money transfers. Khalti aims to provide a convenient, cashless payment solution for both individuals and businesses in Nepal.
+
+
+
+                </p>
+            </div>
+            <div class="portfolio-item">
+                <img src="nabil.jpg" alt="Project 3">
+                <h3>Project 3</h3>
+                <p>Nabil Bank is one of Nepal's leading commercial banks, offering a wide range of banking services, including savings and current accounts, loans, remittances, and digital banking solutions. Known for its customer-centric approach, Nabil Bank provides reliable and efficient financial services to individuals and businesses across Nepal.
+
+
+
+                </p>
+            </div>
+            <div class="portfolio-item">
+                <img src="prabhu.jpg" alt="Project 4">
+                <h3>Project 4</h3>
+                <p>Prabhu Bank is a prominent commercial bank in Nepal, offering a wide range of banking services such as savings and current accounts, loans, remittances, and digital banking solutions. Known for its strong customer service and innovative banking products, Prabhu Bank serves individuals, businesses, and institutions across the country.
+
+
+
+                </p>
             </div>
         </div>
-        <section class="description">
-            <h2 class="bounce">Welcome to My Portfolio.</h2>
-            <p>
-                Hello, I'm Anusha Byanjankar, I am a web developer. I am learning, and have knowledge of html code, css, javascript.
-            </p>
-        </section>
-    </header>
-    <hr> 
-   
-    <section id="education" class="education staggered-text"></section>
-        <h2>Education Qualification</h2>
-        <ul>
-            <li>Master of Science in Computer Science - MIT (2020)</li>
-            <li>Bachelor of Science in Computer Application- Stanford (2018)</li>
-            <li>+2 in Computer Science- TU(2023) </li>
-        </ul>
     </section>
 
-    <hr> 
-
-    <section id="professional-history" class="professional-history">
-        <h2>Professional History</h2>
-        <ul>
-            <li>Lead Developer - Openwebsite (2023 - Present)</li>
-            <li>Researcher - MIT (2020 - 2023)</li>
-            <li>Software Engineer - Google (2018 - 2020)</li>
-        </ul>
-    </section>
-    <hr>
-
-    <section id="contact" class="contact">
-        <h2>Contact</h2>
-        <p>If you'd like to get in touch, feel free to reach out via email or phone:</p>
-        <p><a href="anusha04@gmail.com">anusha04@gmail.com</a></p>
-        <p><a href="9823532820">9823532820</a></p>
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2>Contact Me</h2>
+        <p>
+            Feel free to reach out to me for inquiries or project collaborations.
+        </p>
+        <p>Email: anushabyanjankar7@gmail.com</p>
     </section>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 My Portfolio | All Rights Reserved</p>
+        <p>&copy; 2025 My portfolio. | All rights reserved.</p>
     </footer>
 
 </body>
